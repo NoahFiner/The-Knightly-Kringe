@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Knightly Kringe</title>
+        <script type='text/javascript' src="res/jquery.js"></script>
+        <link type="text/css" rel="stylesheet" href="style.css"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    </head>
+    <body id="annoyinghtml">
+    <div id="stars">
+    </div>
+    <div id="lower">
+        <div id="lower-background">
+            <img src="header-new.png" id="header"/>
+            <img src="dirt-top.png" id="dirt-top"/>
+            <img src="dirt.png" class="dirt"/>
+            <img src="dirt.png" class="dirt"/>
+            <img src="dirt.png" class="dirt"/>
+            <img src="dirt.png" class="dirt"/>
+        </div>
+        <div id="lower-content">
+            <div class="article-outer" id="article0">
+                <img class="article-back" src="article-border.png"/>
+                <div class="article-inner">
+                    <div class="article-image">
+                        <img src="article0.jpg" class="article-image-img"/>
+                    </div>
+                    <div class="article-text">
+                        <h1>Lorem Ipsum</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Hoc est non modo cor non habere, sed ne palatum quidem. Quae quidem vel cum periculo est quaerenda vobis; Tamen aberramus a proposito, et, ne longius, prorsus, inquam, Piso, si ista mala sunt, placet. Itaque e contrario moderati aequabilesque habitus, affectiones ususque corporis apti esse ad naturam videntur. Num igitur eum postea censes anxio animo aut sollicito fuisse? Duo Reges: constructio interrete.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="fixed-stuff">
+            <iframe src="article0.html">
+            </iframe>
+            <div id="button">
+                Go back
+            </div>
+        </div>
+    <script>
+        var Star = function(id, mLeft, mTop) {
+            this.id = id;
+            $('#stars').append("<div class='star' id="+id+" style='margin-left:"+mLeft+"px;margin-top:"+mTop+"px'></div>")
+            this.glitter = function() {
+                $('#'+id).animate({marginLeft:"-=5px",marginTop:"-=5px",height:"+=10px",width:"+=10px"},500);
+                $('#'+id).animate({marginLeft:"+=5px",marginTop:"+=5px",height:"-=10px",width:"-=10px"},500);
+            }
+        }
+    var up = function() {
+        $('#lower').animate({marginTop:"+=1500px"}, 1000);
+        $('#stars').animate({marginTop:"+=500px"}, 1000);
+        $("html, body").animate({scrollTop:0}, 1000);
+        $('#fixed-stuff').fadeTo(1000, 1);
+        $('iframe').css("pointer-events", "auto");//made this auto at first, but screw it
+    }
+    var down = function() {
+        //$('iframe').blur();
+        $('#lower').animate({marginTop:"-=1500px"}, 1000);
+        $('#stars').animate({marginTop:"-=500"}, 1000);
+        $("html, body").animate({scrollTop:0}, 1000);
+        $('#fixed-stuff').fadeTo(1000, 0);
+        $('iframe').css("pointer-events", "none");
+    }
+    var ss = [];
+    for(i = 0; i < 400; i++) {
+        ss[i] = new Star("s"+i, Math.random()*1500, Math.random()*3000);
+    }
+    var glitterAFew = function() {
+        for(i = 0; i < 20; i++) {
+            ss[Math.floor(Math.random()*99)].glitter();
+        }
+    }
+    setInterval(function() {glitterAFew()}, 1000);
+    setTimeout(function() {setInterval(function() {glitterAFew()}, 1000)}, 250);
+    setTimeout(function() {setInterval(function() {glitterAFew()}, 1000)}, 500);
+    setTimeout(function() {setInterval(function() {glitterAFew()}, 1000)}, 750);
+    var readingArticle = false;
+    $(document).ready(function() {
+                      //$('iframe').blur();
+                      $('#button').click(function() {
+                                         readingArticle = false;
+                                         down();
+                                         });
+                      $('.article-outer').click(function() {
+                                                readingArticle = true;
+                                                up();
+                                                });
+                      });
+    </script>
+    </body>
+</html>
