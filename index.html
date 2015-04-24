@@ -34,7 +34,8 @@
         </div>
     </div>
         <div id="fixed-stuff">
-            <iframe src="article0.html">
+            <h1 id="loading">Loading...</h1>
+            <iframe src="">
             </iframe>
             <div id="button">
                 Go back
@@ -73,6 +74,14 @@
             ss[Math.floor(Math.random()*99)].glitter();
         }
     }
+    var activateiframe = function(which) {
+        $('iframe').attr("src", "article"+which+".html");
+        $('#loading').hide();
+    }
+    var deactivateiframe = function() {
+        $('iframe').attr("src", "");
+        $('#loading').show();
+    }
     setInterval(function() {glitterAFew()}, 1000);
     setTimeout(function() {setInterval(function() {glitterAFew()}, 1000)}, 250);
     setTimeout(function() {setInterval(function() {glitterAFew()}, 1000)}, 500);
@@ -80,12 +89,18 @@
     var readingArticle = false;
     $(document).ready(function() {
                       //$('iframe').blur();
+                      $(window).scroll(function() {
+                                       if(readingArticle) {
+                                            window.scrollTo(0, 0);
+                                       }
+                                       });
                       $('#button').click(function() {
                                          readingArticle = false;
                                          down();
+                                         setTimeout(function() {deactivateiframe()}, 1000);
                                          });
                       $('.article-outer').click(function() {
-                                                readingArticle = true;
+                                                setTimeout(function() {readingArticle = true; activateiframe(0);}, 1000);
                                                 up();
                                                 });
                       });
