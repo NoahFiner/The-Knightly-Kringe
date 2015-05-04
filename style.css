@@ -51,26 +51,38 @@ html, body {
     pointer-events:none;
 }
 
-#button {
+.coolbutton {
     text-shadow:0px 0px 5px #000;
     cursor:pointer;
-    margin-top:-0.13%;
-    height:9%;
-    /*WHY DOES VERTICAL ALIGNMENT HATE ME*/
-    line-height:66px;
-    width:200px;
     display:block;
     text-align:center;
     background-color:#004AB8;
     border-radius:20px;
     margin-left:auto;
     margin-right:auto;
-    font-size:35px;
     font-weight:bolder;
     vertica-align:middle;
     transition:border-radius 0.25s, background-color 0.25s;
     -webkit-transition:border-radius 0.25s, background-color 0.25s;
 }
+
+#button2, #button3 {
+  margin-top:0px;
+  top:-15.5px;
+  height:40px;
+  line-height:40px;
+  width:50%;
+  font-size:20px;
+}
+
+#button {
+  margin-top:-0.13%;
+  height:9%;
+  /*WHY DOES VERTICAL ALIGNMENT HATE ME*/
+  line-height:66px;
+  width:200px;
+  font-size:35px;
+  }
 
 #lower-background, lower-content {
     width:101%;
@@ -78,8 +90,95 @@ html, body {
     position:absolute;
 }
 
-#article0 {
+#article1 {
     margin-top:800px;
+}
+
+#fixed-crap {
+  margin-left:-1%;
+  margin-top:-1%;
+  height:101%;
+  width:101%;
+  position:fixed;
+  z-index:10000000000000000000;
+  pointer-events:none;
+}
+
+#header-left, #header-right {
+  transition: opacity 0.75s, width 0.5s, position 1s linear 2s;
+  -webkit-transition: opacity 0.75s, width 0.5s, position 1s linear 2s;
+}
+
+#header-outer * {
+  display:inline-block;
+}
+
+.header-section {
+  margin-left:0.45%;
+  margin-right:0.45%;
+  width:30%;
+  height:50px;
+  margin-top:25px;
+  display:inline-block;
+}
+
+.unstupify {
+  margin-left:-35px;
+  position:static;
+}
+
+#header-outer div img {
+  height:45px;
+  margin-top:5px;
+}
+
+.hidey {
+  margin-top:-100px;
+}
+
+.unhidey {
+  margin-top:-25px;
+}
+
+.condense {
+  width:1%;
+  opacity:0;
+  position:absolute;
+}
+
+#header-outer:hover {
+  width:85%;
+}
+
+#header-outer {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  height:75px;
+  border-radius:5px;
+  width:67%;
+  text-align:center;
+  pointer-events:auto;
+  z-index:1000000000000000000000000000000000000;
+  background-color:rgba(0, 0, 0, 0.5);
+  transition:margin-top 0.5s, width 0.25s;
+  -webkit-transition:margin-top 0.5s, width 0.25s;
+}
+
+#about {
+  background-color:rgba(0, 0, 0, 0.5);
+  width:33%;
+  margin-left:61%;
+  margin-top:1px;
+  position:fixed;
+  opacity:0;
+}
+
+h6 {
+  font-size:15px;
+  font-weight:500;
+  color:#D49E6A;
+  margin: 0 0 0 0;
 }
 
 .article-outer {
@@ -90,7 +189,7 @@ html, body {
     margin-top:100px;
     width:90%;
     height:250px;
-    z-index:1000000000000;
+    z-index:10000000;
     display:block;
     border-radius:40px;
     transition:background-color 0.25s;
@@ -106,7 +205,7 @@ html, body {
     height:100%;
     border-radius:40px;
     position:absolute;
-    z-index:10000000000000000;
+    z-index:10000;
 }
 
 .article-inner {
@@ -126,12 +225,12 @@ html, body {
 
 .article-text h1 {
     margin-left:50px;
-    font-size:50px;
+    font-size:30px;
     color:#D49E6A;
     font-weight:900;
 }
 
-#button:hover {
+#button:hover, .coolbutton:hover {
     border-radius:2px;
     background-color:#3399FF;
 }
@@ -176,7 +275,7 @@ html, body {
     text-shadow:0px 0px 10px #000;
 }
 
-#button:active {
+#button:active, .coolbutton:active {
     background-color:#FFF;
     border-radius:0px;
 }
@@ -190,7 +289,7 @@ iframe {
     margin: 0 0 0 0;
 }
 
-#button {
+#button, .coolbutton {
     position:relative;
 }
 
@@ -211,7 +310,8 @@ iframe {
     margin-right:10%;
     background-color:rgba(255, 255, 255, 0.8);
     position:fixed;
-    z-index:10000000;
+    pointer-events:none;
+    z-index:100000000000000000;
 }
 
 #annoyinghtml:hover {
