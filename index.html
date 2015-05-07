@@ -5,16 +5,6 @@
         <script type='text/javascript' src="res/jquery.js"></script>
         <link type="text/css" rel="stylesheet" href="style.css"/>
         <link rel="icon" href="favicon.ico" type="image/x-icon">
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-59921773-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
     </head>
     <body id="annoyinghtml">
     <div id="stars">
@@ -30,7 +20,7 @@
           <img src="logo.png"/>
         </div>
         <div id="header-right" class="header-section">
-          <div id="button3" onclick="toggleAbout()" class="coolbutton">
+          <div id="button3" onclick="toggleAbout();" class="coolbutton">
               About
           </div>
         </div>
@@ -55,7 +45,7 @@
             <img class="article-back" src="article-border.png"/>
             <div class="article-inner">
                 <div class="article-image">
-                    <img src="article1.jpg" class="article-image-img"/>
+                    <img src="articles/article1.jpg" class="article-image-img"/>
                 </div>
                 <div class="article-text">
                     <h1>The New PARCC Schedule</h1>
@@ -69,7 +59,7 @@
             <img class="article-back" src="article-border.png"/>
             <div class="article-inner">
                 <div class="article-image">
-                    <img src="article2.jpg" class="article-image-img"/>
+                    <img src="articles/article2.jpg" class="article-image-img"/>
                 </div>
                 <div class="article-text">
                     <h1>Album Review Carrie and Lowell</h1>
@@ -128,7 +118,7 @@
         }
     }
     var activateiframe = function(which) {
-        $('iframe').attr("src", "article"+which+".html");
+        $('iframe').attr("src", "articles/article"+which+".html");
         $('#loading').hide();
         $('#fixed-stuff').css("pointer-events", "auto");
     }
