@@ -27,7 +27,8 @@
       </div>
       <div id="about">
         <p>The Knightly Kringe is a student-run newspaper for Fairview High School. We're focused on the production of punny school news.</p>
-        <p>Site made by Noah. Articles by Noah, Jake, and Michal.</p>
+        <p>Site made by Noah.</p>
+        <p>Articles written by Noah, Jake, and Zachary</p>
       </div>
     </div>
     <div id="lower">
@@ -42,6 +43,7 @@
         <div id="lower-content">
           <h1 id="top-header-header">Recent Articles</h1>
           <div id="top-header">
+
             <div class="article-preview" id="article1-prev" style="background-image:url('articles/article1.jpg')">
               <div class="darkening" onclick="setTimeout(function() {readingArticle = true; activateiframe(1);}, 1000);up();">
                 <p>The New PARCC Schedule</p>
@@ -51,7 +53,8 @@
                 </div>
               </div>
             </div>
-            <div class="article-preview" id="article1-prev" style="background-image:url('articles/article2.jpg')">
+
+            <div class="article-preview" id="article2-prev" style="background-image:url('articles/article2.jpg')">
               <div class="darkening" onclick="setTimeout(function() {readingArticle = true; activateiframe(2);}, 1000);up();">
                 <p>Carrie and Lowell Review</p>
                 <div class="spooky-invisible">
@@ -60,9 +63,34 @@
                 </div>
               </div>
             </div>
+
+          <div class="article-preview" id="article3-prev" style="background-image:url('articles/article3.jpg')">
+            <div class="darkening" onclick="setTimeout(function() {readingArticle = true; activateiframe(3);}, 1000);up();">
+              <p>Opiniated "Clash of Clans" Review</p>
+              <div class="spooky-invisible">
+                <h6>By Zachary Mullison</h6>
+                <p>Clash of clans is a progressive strategy game in which people will have to...</p>
+              </div>
+            </div>
           </div>
 
+
+        </div>
+
           <div id="placeholder-crap-yay"></div>
+
+          <div class="article-outer" id="article3">
+              <img class="article-back" src="article-border.png"/>
+              <div class="article-inner">
+                  <div class="article-image" style="background-image:url('articles/article3.jpg')">
+                  </div>
+                  <div class="article-text">
+                      <h1>Opiniated "Clash of Clans" Review</h1>
+                      <h6>By Zachary Mullison</h6>
+                      <p>Clash of clans is a progressive strategy game in which people will have to build new defenses and upgrade existing buildings in order to gain power strength and money.</p>
+                  </div>
+              </div>
+          </div>
 
           <div class="article-outer" id="article2">
               <img class="article-back" src="article-border.png"/>
@@ -194,6 +222,10 @@
                       });
                       $('#article2').click(function() {
                         setTimeout(function() {readingArticle = true; activateiframe(2);}, 1000);
+                        up();
+                      });
+                      $('#article3').click(function() {
+                        setTimeout(function() {readingArticle = true; activateiframe(3);}, 1000);
                         up();
                       });
                       });
