@@ -64,12 +64,22 @@
               </div>
             </div>
 
-          <div class="article-preview" id="article3-prev" style="background-image:url('articles/article3.jpg')">
+          <!--<div class="article-preview" id="article3-prev" style="background-image:url('articles/article3.jpg')">
             <div class="darkening" onclick="setTimeout(function() {readingArticle = true; activateiframe(3);}, 1000);up();">
               <p>Opiniated Mobile App Reviews</p>
               <div class="spooky-invisible">
                 <h6>By Zachary Mullison</h6>
                 <p>Clash of clans is a progressive strategy game in which people will have to...</p>
+              </div>
+            </div>
+          </div>-->
+
+          <div class="article-preview" id="article4-prev" style="background-image:url('articles/article4.jpg')">
+            <div class="darkening" onclick="setTimeout(function() {readingArticle = true; activateiframe(4);}, 1000);up();">
+              <p>Advice of Freshmen</p>
+              <div class="spooky-invisible">
+                <h6>By Noah Finer</h6>
+                <p>High school is incredibly scary for the incoming freshmen....</p>
               </div>
             </div>
           </div>
@@ -79,7 +89,20 @@
 
           <div id="placeholder-crap-yay"></div>
 
-          <div class="article-outer" id="article3">
+          <div class="article-outer" id="article4">
+              <img class="article-back" src="article-border.png"/>
+              <div class="article-inner">
+                  <div class="article-image" style="background-image:url('articles/article4.jpg')">
+                  </div>
+                  <div class="article-text">
+                      <h1>Advice of Freshmen</h1>
+                      <h6>By Noah Finer</h6>
+                      <p>High school is incredibly scary for the incoming freshmen. But, from experience, the current freshmen now know that most of their previous fears were not exactly very accurate. Hopefully, the new freshmen can finally learn.</p>
+                  </div>
+              </div>
+          </div>
+
+          <!--<div class="article-outer" id="article3">
               <img class="article-back" src="article-border.png"/>
               <div class="article-inner">
                   <div class="article-image" style="background-image:url('articles/article3.jpg')">
@@ -90,7 +113,7 @@
                       <p>Clash of clans is a progressive strategy game in which people will have to build new defenses and upgrade existing buildings in order to gain power strength and money.</p>
                   </div>
               </div>
-          </div>
+          </div>-->
 
           <div class="article-outer" id="article2">
               <img class="article-back" src="article-border.png"/>
@@ -226,6 +249,10 @@
                       });
                       $('#article3').click(function() {
                         setTimeout(function() {readingArticle = true; activateiframe(3);}, 1000);
+                        up();
+                      });
+                      $('#article4').click(function() {
+                        setTimeout(function() {readingArticle = true; activateiframe(4);}, 1000);
                         up();
                       });
                       });
