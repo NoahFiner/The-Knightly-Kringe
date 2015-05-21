@@ -32,6 +32,23 @@ p {
     font-weight:300;
 }
 
+a {
+  font-weight:500;
+  color::#6D3000;
+  text-decoration: underline;
+  transition:color 0.25s, text-decoration 0.25s;
+  -webkit-transition: color 0.25s, text-decoration 0.25s;
+}
+
+a:hover {
+  color:#D49E6A;
+  text-decoration: underline;
+}
+
+a:active {
+  color:white;
+}
+
 img {
   width:40%;
   margin-left:auto;

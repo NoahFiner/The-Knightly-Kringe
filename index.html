@@ -94,10 +94,33 @@
             </div>
           </div>
 
+          <div class="article-preview" id="article6-prev" style="background-image:url('articles/article6.jpg')">
+            <div class="darkening" onclick="setTimeout(function() {readingArticle = true; activateiframe(6);}, 1000);up();">
+              <p>NBA Playoffs Thus Far</p>
+              <div class="spooky-invisible">
+                <h6>By Jake Pykkonen</h6>
+                <p>The NBA has some of the most well known and dominant in their sport, if not the planet...</p>
+              </div>
+            </div>
+          </div>
+
 
         </div>
 
           <div id="placeholder-crap-yay"></div>
+
+          <div class="article-outer" id="article6">
+              <img class="article-back" src="article-border.png"/>
+              <div class="article-inner">
+                  <div class="article-image" style="background-image:url('articles/article6.jpg')">
+                  </div>
+                  <div class="article-text">
+                      <h1>NBA Playoffs Thus Far</h1>
+                      <h6>By Jake Pykkonoen</h6>
+                      <p>The NBA has some of the most well known and dominant in their sport, if not the planet. Lebron James, Derrick Rose, Paul Pierce, Chris Paul, Stephen Curry, Blake Griffin, Kyrie Erving, Jimmy Butler, Pau Gasol, Marc Gasol, John Wall, James Harden, Dwight Howard, and Mike Conley highlight the last eight teams left in the tight NBA playoff race.</p>
+                  </div>
+              </div>
+          </div>
 
           <div class="article-outer" id="article5">
               <img class="article-back" src="article-border.png"/>
@@ -281,6 +304,10 @@
                       });
                       $('#article5').click(function() {
                         setTimeout(function() {readingArticle = true; activateiframe(5);}, 1000);
+                        up();
+                      });
+                      $('#article6').click(function() {
+                        setTimeout(function() {readingArticle = true; activateiframe(6);}, 1000);
                         up();
                       });
                       });
