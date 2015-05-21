@@ -84,10 +84,34 @@
             </div>
           </div>
 
+          <div class="article-preview" id="article5-prev" style="background-image:url('articles/article5.jpg')">
+            <div class="darkening" onclick="setTimeout(function() {readingArticle = true; activateiframe(5);}, 1000);up();">
+              <p>AM by Arctic Monkeys Review</p>
+              <div class="spooky-invisible">
+                <h6>By Michal Olesiak</h6>
+                <p>AM by the Arctic Monkeys is their fifth and possibly best album to be released by them...</p>
+              </div>
+            </div>
+          </div>
+
 
         </div>
 
           <div id="placeholder-crap-yay"></div>
+
+          <div class="article-outer" id="article5">
+              <img class="article-back" src="article-border.png"/>
+              <div class="article-inner">
+                  <div class="article-image" style="background-image:url('articles/article5.jpg')">
+                  </div>
+                  <div class="article-text">
+                      <h1>A Review of AM by Arctic Monkeys From Fairview</h1>
+                      <h6>By Michal Olesiak</h6>
+                      <p>AM by the Arctic Monkeys is their fifth and possibly best album to be released by them, having 12 songs, totaling at 41 minutes and 43 seconds. It was recorded through March-June, 2013, and released on September 6th 2013, and by September 15th, 2013 was number one on UK Albums Chart, selling 157,329 copies. In the United States according to Billboard 200 it became number six, selling 42,000 in its first week. AM, by 2014, became Gold certified by the RIAA (Recording Industry Association of America), selling more than 500,000 copies.</p>
+                  </div>
+              </div>
+          </div>
+
 
           <div class="article-outer" id="article4">
               <img class="article-back" src="article-border.png"/>
@@ -253,6 +277,10 @@
                       });
                       $('#article4').click(function() {
                         setTimeout(function() {readingArticle = true; activateiframe(4);}, 1000);
+                        up();
+                      });
+                      $('#article5').click(function() {
+                        setTimeout(function() {readingArticle = true; activateiframe(5);}, 1000);
                         up();
                       });
                       });
