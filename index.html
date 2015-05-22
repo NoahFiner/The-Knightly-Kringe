@@ -12,7 +12,7 @@
     <div id="fixed-crap">
       <div id="header-outer" class="hidey">
         <div id="header-left" class="header-section">
-          <div id="button2" onclick="$('html, body').animate({scrollTop:0}, 1000);" class="coolbutton">
+          <div id="button2" onclick="$('html, body').animate({scrollTop:0}, 1000);coolanimation()" class="coolbutton">
               Back to top
           </div>
         </div>
@@ -33,7 +33,7 @@
     </div>
     <div id="lower">
         <div id="lower-background">
-            <img src="header-new.png" id="header"/>
+            <img src="header-new.png" id="header" onmouseover="coolanimation()" style="pointer-events:auto"/>
             <img src="dirt-top.png" id="dirt-top"/>
             <img src="dirt.png" class="dirt"/>
             <img src="dirt.png" class="dirt"/>
@@ -104,10 +104,33 @@
             </div>
           </div>
 
+          <div class="article-preview" id="article7-prev" style="background-image:url('articles/article7.jpg')">
+            <div class="darkening" onclick="setTimeout(function() {readingArticle = true; activateiframe(7);}, 1000);up();">
+              <p>Strangers to Ourselves</p>
+              <div class="spooky-invisible">
+                <h6>By Michal Olesiak</h6>
+                <p>Strangers to Ourselves, is different, not bad, but differents...</p>
+              </div>
+            </div>
+          </div>
+
 
         </div>
 
           <div id="placeholder-crap-yay"></div>
+
+          <div class="article-outer" id="article7">
+              <img class="article-back" src="article-border.png"/>
+              <div class="article-inner">
+                  <div class="article-image" style="background-image:url('articles/article7.jpg')">
+                  </div>
+                  <div class="article-text">
+                      <h1>Strangers to Ourselves by Modest Mouse Review</h1>
+                      <h6>By Michal Olesiak</h6>
+                      <p>Fast. Loud. Chill. Are the words that come to mind when you hear Modest Mouse, but their newest album, Strangers to Ourselves, is different, not bad, but different. Strangers to Ourselves by Modest Mouse is their newest album, being released on March 17, 2015, being released eight years after their last album, and totals at 57 minutes and 10 seconds.</p>
+                  </div>
+              </div>
+          </div>
 
           <div class="article-outer" id="article6">
               <img class="article-back" src="article-border.png"/>
@@ -263,8 +286,20 @@
         aboutActive = true;
       }
     }
+    var prettify = function(what) {
+      $('#article'+what+'-prev').addClass("animated-prettiness");
+      setTimeout(function() {unsprettify(what)}, 250);
+    }
+    var unsprettify = function(what) {
+      $('#article'+what+'-prev').removeClass("animated-prettiness");
+    }
+    var coolanimation = function() {
+      //random beginning pretty animation yay
+      //pretend I executed this well
+      setTimeout(function() {prettify(1); setTimeout(function() {prettify(2); setTimeout(function() {prettify(4); setTimeout(function() {prettify(5); setTimeout(function() {prettify(6); setTimeout(function() {prettify(7)}, 100)}, 100)}, 100)}, 100)}, 100)}, 100);
+    }
     $(document).ready(function() {
-                      $(window).scroll(function() {
+                          $(window).scroll(function() {
                                        if(readingArticle) {
                                             window.scrollTo(0, 0);
                                        }
@@ -308,6 +343,10 @@
                       });
                       $('#article6').click(function() {
                         setTimeout(function() {readingArticle = true; activateiframe(6);}, 1000);
+                        up();
+                      });
+                      $('#article7').click(function() {
+                        setTimeout(function() {readingArticle = true; activateiframe(7);}, 1000);
                         up();
                       });
                       });
